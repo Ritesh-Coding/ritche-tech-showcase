@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, Code, Database, Server, Monitor, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, Code, Database, Server, Monitor, Sparkles, Building2, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ProfessionalImage from "@/components/ProfessionalImage";
 
@@ -338,8 +338,8 @@ const Index = () => {
             <div className="relative reveal">
               <div className="w-full h-80 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" 
-                  alt="Professional workspace with laptop"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" 
+                  alt="Professional developer"
                   className="w-full h-full object-cover rounded-xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
@@ -353,66 +353,66 @@ const Index = () => {
       <section id="skills" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Technical Skills</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="magnetic-card gradient-border stagger-item">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Code className="w-6 h-6 mr-3 text-blue-600 tech-icon" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Code className="w-5 h-5 mr-2 text-blue-600 tech-icon" />
                   Programming
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.programming.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="magnetic-card gradient-border stagger-item">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Monitor className="w-6 h-6 mr-3 text-green-600 tech-icon" />
+            <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Monitor className="w-5 h-5 mr-2 text-green-600 tech-icon" />
                   Frontend
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.frontend.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="magnetic-card gradient-border stagger-item">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Server className="w-6 h-6 mr-3 text-purple-600 tech-icon" />
+            <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Server className="w-5 h-5 mr-2 text-purple-600 tech-icon" />
                   Backend
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.backend.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="magnetic-card gradient-border stagger-item">
-              <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Database className="w-6 h-6 mr-3 text-orange-600 tech-icon" />
+            <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Database className="w-5 h-5 mr-2 text-orange-600 tech-icon" />
                   Database & Tools
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-1.5">
                   {[...skills.databases, ...skills.tools].map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
@@ -468,6 +468,57 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Professional Experience</h2>
+          <div className="space-y-8">
+            <Card className="magnetic-card gradient-border reveal">
+              <CardHeader>
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <CardTitle className="text-xl mb-2 gradient-text-animated">Full Stack Developer</CardTitle>
+                    <div className="flex items-center text-slate-600 mb-2">
+                      <Building2 className="w-4 h-4 mr-2 text-blue-600" />
+                      <span className="font-semibold">EsparkBiz Technologies</span>
+                    </div>
+                    <div className="flex items-center text-slate-500">
+                      <Calendar className="w-4 h-4 mr-2 text-green-600" />
+                      <span>01/2024 - Present</span>
+                    </div>
+                  </div>
+                  <Badge className="bg-green-100 text-green-700 border-green-200">Current Position</Badge>
+                </div>
+                <CardDescription className="text-base">
+                  Working as a Full Stack Developer, contributing to various web development projects using modern technologies and frameworks.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <h4 className="font-semibold text-sm text-slate-700 mb-3">Key Responsibilities & Achievements:</h4>
+                <ul className="text-sm text-slate-600 space-y-2">
+                  <li className="flex items-start hover:text-blue-600 transition-colors">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-glow"></span>
+                    Developing and maintaining full-stack web applications using React, Django, and Flask
+                  </li>
+                  <li className="flex items-start hover:text-blue-600 transition-colors">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-glow"></span>
+                    Collaborating with cross-functional teams to deliver high-quality software solutions
+                  </li>
+                  <li className="flex items-start hover:text-blue-600 transition-colors">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-glow"></span>
+                    Implementing responsive designs and optimizing application performance
+                  </li>
+                  <li className="flex items-start hover:text-blue-600 transition-colors">
+                    <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-glow"></span>
+                    Working with databases and API integrations for seamless functionality
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
