@@ -216,6 +216,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
+      
       {/* Animated background */}
       <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
         <div className="absolute inset-0 opacity-30">
