@@ -55,7 +55,8 @@ const Index = () => {
     
     // Create floating particles
     createParticles();
-    
+    handleScroll();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("mousemove", handleMouseMove);
@@ -253,7 +254,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="reveal">
             <div className="mb-8">
-              <Sparkles className="w-12 h-12 mx-auto text-blue-600 animate-pulse-glow" />
+              {/* <Sparkles className="w-12 h-12 mx-auto text-blue-600 animate-pulse-glow" /> */}
             </div>
             <h1 className="text-6xl md:text-8xl font-bold text-slate-800 mb-6 glow-text">
               <span className="typewriter">Ritesh Jaiswal</span>
@@ -338,7 +339,7 @@ const Index = () => {
             <div className="relative reveal">
               <div className="w-full h-80 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" 
+                  src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/uploads/2023-01/158029af-a86a-402f-a5b5-e915cc69f138.JPG" 
                   alt="Professional developer"
                   className="w-full h-full object-cover rounded-xl"
                 />
@@ -605,7 +606,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <p className="text-slate-400">
-            © 2024 Ritesh Jaiswal. Built with React & Tailwind CSS.
+            © 2024 Ritesh Jaiswal.
           </p>
         </div>
       </footer>
