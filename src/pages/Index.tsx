@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Mail, Phone, MapPin, Download, ExternalLink, Code, Database, Server, Monitor, Sparkles } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import ProfessionalImage from "@/components/ProfessionalImage";
 
 const Index = () => {
   const { toast } = useToast();
@@ -89,37 +90,7 @@ const Index = () => {
     tools: ["GCP BigQuery", "Luzmo", "JWT Authentication", "Django Channels"]
   };
 
-  const projects = [
-    {
-      title: "HRMS - Human Resource Management Service",
-      description: "A comprehensive full-stack web application for managing human resources with advanced features for employee management and real-time communication.",
-      tech: ["Django", "React", "PostgreSQL"],
-      features: [
-        "Employee attendance tracking",
-        "Leave management system", 
-        "User roles and permissions",
-        "Profile editing capabilities",
-        "JWT authentication",
-        "Real-time chat via Django Channels",
-        "Notification system"
-      ],
-      type: "Full-Stack Web Application",
-      gradient: "from-blue-400 to-purple-600"
-    },
-    {
-      title: "UrbanClap Clone - Service Booking Platform",
-      description: "A complete clone of the UrbanClap web application featuring comprehensive service booking and management capabilities.",
-      tech: ["Node.js", "Express.js", "MySQL", "Bootstrap"],
-      features: [
-        "Service booking system",
-        "Appointment scheduling",
-        "Advanced service search",
-        "Role-based service management",
-        "User authentication system"
-      ],
-      type: "Service Booking Platform",
-      gradient: "from-green-400 to-blue-600"
-    },
+  const allProjects = [
     {
       title: "Twindo - Real-time Data Analytics Dashboard",
       description: "Advanced analytics dashboard leveraging GCP BigQuery for processing large datasets and providing real-time business intelligence.",
@@ -132,23 +103,9 @@ const Index = () => {
         "Cross-functional team collaboration",
         "Data pipeline streamlining"
       ],
-      type: "Analytics Platform",
-      gradient: "from-purple-400 to-pink-600"
-    },
-    {
-      title: "MyBoxRox - Virtual Land System",
-      description: "Production-level web application for virtual land claim and purchase system with comprehensive frontend and backend integration.",
-      tech: ["Django", "React"],
-      features: [
-        "Virtual land management",
-        "Purchase and claim system",
-        "Responsive UI design",
-        "API integration optimization",
-        "Component rendering fixes",
-        "Data handling improvements"
-      ],
-      type: "Virtual Land Platform",
-      gradient: "from-orange-400 to-red-600"
+      type: "Live Project - Analytics Platform",
+      gradient: "from-purple-400 to-pink-600",
+      isLive: true
     },
     {
       title: "DSD - Doctor-Patient Consultation Platform",
@@ -162,8 +119,57 @@ const Index = () => {
         "System performance improvements",
         "User experience enhancements"
       ],
-      type: "Healthcare Platform",
-      gradient: "from-teal-400 to-blue-600"
+      type: "Live Project - Healthcare Platform",
+      gradient: "from-teal-400 to-blue-600",
+      isLive: true
+    },
+    {
+      title: "MyBoxRox - Virtual Land System",
+      description: "Production-level web application for virtual land claim and purchase system with comprehensive frontend and backend integration.",
+      tech: ["Django", "React"],
+      features: [
+        "Virtual land management",
+        "Purchase and claim system",
+        "Responsive UI design",
+        "API integration optimization",
+        "Component rendering fixes",
+        "Data handling improvements"
+      ],
+      type: "Live Project - Virtual Land Platform",
+      gradient: "from-orange-400 to-red-600",
+      isLive: true
+    },
+    {
+      title: "HRMS - Human Resource Management Service",
+      description: "A comprehensive full-stack web application for managing human resources with advanced features for employee management and real-time communication.",
+      tech: ["Django", "React", "PostgreSQL"],
+      features: [
+        "Employee attendance tracking",
+        "Leave management system", 
+        "User roles and permissions",
+        "Profile editing capabilities",
+        "JWT authentication",
+        "Real-time chat via Django Channels",
+        "Notification system"
+      ],
+      type: "Personal Project - Full-Stack Web Application",
+      gradient: "from-blue-400 to-purple-600",
+      isLive: false
+    },
+    {
+      title: "UrbanClap Clone - Service Booking Platform",
+      description: "A complete clone of the UrbanClap web application featuring comprehensive service booking and management capabilities.",
+      tech: ["Node.js", "Express.js", "MySQL", "Bootstrap"],
+      features: [
+        "Service booking system",
+        "Appointment scheduling",
+        "Advanced service search",
+        "Role-based service management",
+        "User authentication system"
+      ],
+      type: "Personal Project - Service Booking Platform",
+      gradient: "from-green-400 to-blue-600",
+      isLive: false
     }
   ];
 
@@ -203,13 +209,13 @@ const Index = () => {
       grade: "8.54 CGPA"
     },
     {
-      degree: "12th Standard",
+      degree: "H.S.C (Higher Secondary Certificate)",
       institution: "Nelson Higher Secondary School (Gujarat Board)",
       period: "2019 – 2020", 
       grade: "70%"
     },
     {
-      degree: "10th Standard",
+      degree: "S.S.C (Secondary School Certificate)",
       institution: "Ahmedabad Kerala Samajam School (Gujarat Board)",
       period: "2017 – 2018",
       grade: "83%"
@@ -217,9 +223,16 @@ const Index = () => {
   ];
 
   const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/lovable-uploads/f877cc32-5952-4aba-b351-8fda5893dce7.png';
+    link.download = 'Ritesh_Jaiswal_Resume.jpg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     toast({
-      title: "Resume Download",
-      description: "Resume download feature will be available soon!",
+      title: "Resume Downloaded",
+      description: "Ritesh Jaiswal's resume has been downloaded successfully!",
     });
   };
 
@@ -345,12 +358,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative reveal">
-              <div className="w-full h-80 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-2xl flex items-center justify-center text-white text-8xl font-bold morph-shape animate-rotate-slow relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-                RJ
-              </div>
-            </div>
+            <ProfessionalImage />
           </div>
         </div>
       </section>
@@ -427,19 +435,21 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Combined Projects Section */}
       <section id="projects" className="py-16 px-4 relative">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Projects & Professional Work</h2>
           <div className="grid lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {allProjects.map((project, index) => (
               <Card key={index} className="tilt-card magnetic-card gradient-border group overflow-hidden reveal">
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 <CardHeader className="relative z-10">
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle className="text-xl mb-2 gradient-text-animated">{project.title}</CardTitle>
-                      <Badge variant="outline" className="mb-2 glass">{project.type}</Badge>
+                      <Badge variant="outline" className={`mb-2 glass ${project.isLive ? 'bg-green-50 text-green-700 border-green-200' : 'bg-blue-50 text-blue-700 border-blue-200'}`}>
+                        {project.type}
+                      </Badge>
                     </div>
                     <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors animate-bounce-gentle" />
                   </div>
