@@ -105,7 +105,8 @@ const Index = () => {
       ],
       type: "Live Project - Analytics Platform",
       gradient: "from-purple-400 to-pink-600",
-      isLive: true
+      isLive: true,
+      hasLink: false
     },
     {
       title: "DSD - Doctor-Patient Consultation Platform",
@@ -121,7 +122,8 @@ const Index = () => {
       ],
       type: "Live Project - Healthcare Platform",
       gradient: "from-teal-400 to-blue-600",
-      isLive: true
+      isLive: true,
+      hasLink: false
     },
     {
       title: "MyBoxRox - Virtual Land System",
@@ -137,7 +139,8 @@ const Index = () => {
       ],
       type: "Live Project - Virtual Land Platform",
       gradient: "from-orange-400 to-red-600",
-      isLive: true
+      isLive: true,
+      hasLink: true
     },
     {
       title: "HRMS - Human Resource Management Service",
@@ -154,7 +157,8 @@ const Index = () => {
       ],
       type: "Personal Project - Full-Stack Web Application",
       gradient: "from-blue-400 to-purple-600",
-      isLive: false
+      isLive: false,
+      hasLink: true
     },
     {
       title: "UrbanClap Clone - Service Booking Platform",
@@ -169,35 +173,8 @@ const Index = () => {
       ],
       type: "Personal Project - Service Booking Platform",
       gradient: "from-green-400 to-blue-600",
-      isLive: false
-    }
-  ];
-
-  const experience = [
-    {
-      title: "Full Stack Developer",
-      company: "eSparkBiz Technologies",
-      period: "01/2024 - Present",
-      projects: [
-        {
-          name: "Twindo - Real-time Data Analytics Dashboard",
-          description: "Extensively worked with GCP BigQuery to process and analyze large datasets, optimize query performance, and integrate with Luzmo for real-time, dynamic business intelligence reporting.",
-          achievements: [
-            "Designed and developed interactive dashboards in Luzmo",
-            "Collaborated with cross-functional teams to streamline data pipelines", 
-            "Enhanced dashboard functionality through data-driven decision-making"
-          ]
-        },
-        {
-          name: "DSD - Doctor-Patient Consultation Platform",
-          description: "Contributed to production web app by resolving frontend and backend issues, optimizing API interactions, and implementing features like dynamic listing, search, and sorting.",
-          achievements: [
-            "Improved user experience and system performance",
-            "Implemented dynamic search and sorting features",
-            "Optimized API interactions for better performance"
-          ]
-        }
-      ]
+      isLive: false,
+      hasLink: true
     }
   ];
 
@@ -358,7 +335,16 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <ProfessionalImage />
+            <div className="relative reveal">
+              <div className="w-full h-80 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" 
+                  alt="Professional workspace with laptop"
+                  className="w-full h-full object-cover rounded-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -446,12 +432,16 @@ const Index = () => {
                 <CardHeader className="relative z-10">
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="text-xl mb-2 gradient-text-animated">{project.title}</CardTitle>
+                      {project.hasLink ? (
+                        <CardTitle className="text-xl mb-2 gradient-text-animated">{project.title}</CardTitle>
+                      ) : (
+                        <CardTitle className="text-xl mb-2 gradient-text-animated">{project.title}</CardTitle>
+                      )}
                       <Badge variant="outline" className={`mb-2 glass ${project.isLive ? 'bg-green-50 text-green-700 border-green-200' : 'bg-blue-50 text-blue-700 border-blue-200'}`}>
                         {project.type}
                       </Badge>
                     </div>
-                    <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors animate-bounce-gentle" />
+                    {project.hasLink && <ExternalLink className="w-5 h-5 text-slate-400 group-hover:text-blue-600 transition-colors animate-bounce-gentle" />}
                   </div>
                   <CardDescription className="text-base">{project.description}</CardDescription>
                 </CardHeader>
@@ -474,47 +464,6 @@ const Index = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section id="experience" className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Professional Experience</h2>
-          <div className="space-y-8">
-            {experience.map((exp, index) => (
-              <Card key={index} className="magnetic-card gradient-border reveal">
-                <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="text-xl gradient-text-animated">{exp.title}</CardTitle>
-                      <CardDescription className="text-lg font-medium text-blue-600">{exp.company}</CardDescription>
-                    </div>
-                    <Badge variant="outline" className="glass">{exp.period}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    {exp.projects.map((project, projIndex) => (
-                      <div key={projIndex}>
-                        <h4 className="font-semibold text-slate-800 mb-2 gradient-text-animated">{project.name}</h4>
-                        <p className="text-slate-600 mb-3">{project.description}</p>
-                        <ul className="text-sm text-slate-600 space-y-1">
-                          {project.achievements.map((achievement, achIndex) => (
-                            <li key={achIndex} className="flex items-start hover:text-green-600 transition-colors">
-                              <span className="w-2 h-2 bg-gradient-to-r from-green-600 to-blue-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-glow"></span>
-                              {achievement}
-                            </li>
-                          ))}
-                        </ul>
-                        {projIndex < exp.projects.length - 1 && <Separator className="mt-4" />}
-                      </div>
-                    ))}
                   </div>
                 </CardContent>
               </Card>
