@@ -286,18 +286,18 @@ const Index = () => {
             </div>
 
             <div className="flex justify-center space-x-8">
-              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform hover:bg-transparent">
-                <a href="mailto:riteshjaiswala@gmail.com" className="p-0 bg-transparent border-none">
+              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform">
+                <a href="mailto:riteshjaiswala@gmail.com">
                   <Mail className="w-6 h-6 text-blue-600 animate-float" />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform hover:bg-transparent">
-                <a href="https://github.com/Ritesh-Coding" target="_blank" rel="noopener noreferrer" className="p-0 bg-transparent border-none">
+              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform">
+                <a href="https://github.com/Ritesh-Coding" target="_blank" rel="noopener noreferrer">
                   <Github className="w-6 h-6 text-slate-700 animate-float" style={{animationDelay: '1s'}} />
                 </a>
               </Button>
-              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform hover:bg-transparent">
-                <a href="https://linkedin.com/in/ritesh-jaiswal-453885212" target="_blank" rel="noopener noreferrer" className="p-0 bg-transparent border-none">
+              <Button variant="ghost" size="sm" asChild className="hover:scale-125 transition-transform">
+                <a href="https://linkedin.com/in/ritesh-jaiswal-453885212" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="w-6 h-6 text-blue-600 animate-float" style={{animationDelay: '2s'}} />
                 </a>
               </Button>
@@ -340,7 +340,7 @@ const Index = () => {
             <div className="relative reveal">
               <div className="w-full h-80 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center overflow-hidden border-4 border-white shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                  src="https://images.cointelegraph.com/cdn-cgi/image/format=auto,onerror=redirect,quality=90,width=717/https://s3.cointelegraph.com/uploads/2023-01/158029af-a86a-402f-a5b5-e915cc69f138.JPG" 
                   alt="Professional developer"
                   className="w-full h-full object-cover rounded-xl"
                 />
@@ -357,64 +357,64 @@ const Index = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-12 reveal gradient-text-animated">Technical Skills</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center text-base">
-                  <Code className="w-4 h-4 mr-2 text-blue-600 tech-icon" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Code className="w-5 h-5 mr-2 text-blue-600 tech-icon" />
                   Programming
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.programming.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-1.5 py-0.5">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
             <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center text-base">
-                  <Monitor className="w-4 h-4 mr-2 text-green-600 tech-icon" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Monitor className="w-5 h-5 mr-2 text-green-600 tech-icon" />
                   Frontend
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.frontend.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-1.5 py-0.5">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
             <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center text-base">
-                  <Server className="w-4 h-4 mr-2 text-purple-600 tech-icon" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Server className="w-5 h-5 mr-2 text-purple-600 tech-icon" />
                   Backend
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                   {skills.backend.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-1.5 py-0.5">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
             <Card className="magnetic-card gradient-border stagger-item hover:scale-105 transition-all duration-300">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center text-base">
-                  <Database className="w-4 h-4 mr-2 text-orange-600 tech-icon" />
+              <CardHeader className="pb-3">
+                <CardTitle className="flex items-center text-lg">
+                  <Database className="w-5 h-5 mr-2 text-orange-600 tech-icon" />
                   Database & Tools
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1.5">
                   {[...skills.databases, ...skills.tools].map((skill) => (
-                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-1.5 py-0.5">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="skill-pulse hover:scale-110 transition-transform text-xs px-2 py-1">{skill}</Badge>
                   ))}
                 </div>
               </CardContent>
